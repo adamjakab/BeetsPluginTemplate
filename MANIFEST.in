@@ -1,0 +1,6 @@
+prune test
+include LICENSE.txt
+include README.md
+include beetsplug/template/version.py
+include beetsplug/template/config_default.yml
+
