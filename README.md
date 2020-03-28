@@ -56,3 +56,8 @@ plugins:
 In all files, in the copyright header, change:
 - `<AUTHOR>` to your name
 - `<EMAIL>` to your e-mail address
+
+### 11. Tests
+- Substitute all occurrences of `template` with `PLUGIN_NAME`
+- Change class name `TemplatePlugin` to `<PLUGIN_NAME>Plugin` in `test/helper.py`
+
