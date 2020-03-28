@@ -72,3 +72,4 @@ Run the command with: `beet template`.
 
 
 ## Now, it's your turn
+The [plugin development documentation](https://beets.readthedocs.io/en/stable/dev/plugins.html) is a good place to start.
