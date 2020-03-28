@@ -26,22 +26,22 @@ rm -rf .git
 git init
 ```
 
-### 4. change plugin folder name
+### 4. Change the name of the plugin folder
 Change the name folder `template` under `beetsplug` to `PLUGIN_NAME`
 
-### 5. setup.py
+### 5. Change code in: `setup.py`
 Substitute all occurrences of `template` with `PLUGIN_NAME`
 
-### 6. beetsplug/template/__init__.py
+### 6. Change code in: `beetsplug/template/__init__.py`
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 - Change class name `TemplatePlugin` to `<PLUGIN_NAME>Plugin`
 - Change class name `TemplateCommand` to `<PLUGIN_NAME>Command`
 
-### 7. beetsplug/template/command.py
+### 7. Change code in: `beetsplug/template/command.py`
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 - Change class name `TemplateCommand` to `<PLUGIN_NAME>Command`
 
-### 8. beetsplug/template/common.py
+### 8. Change code in: `beetsplug/template/common.py`
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 
 ### 9. Change copyright headers
@@ -64,7 +64,7 @@ plugins:
 ### 12. Tests
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 - Change class name `TemplatePlugin` to `<PLUGIN_NAME>Plugin` in `test/helper.py`
-- Install nosetests: `ip install nose`
+- Install nosetests: `pip install nose`
 - Run the tests with `nosetests` - all tests should pass and you should get 100% coverage. Keep it that way ;)
 
 ### 13. Run the command
