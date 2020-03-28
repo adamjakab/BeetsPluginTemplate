@@ -1,19 +1,14 @@
-#  Copyright: Copyright (c) 2020., Adam Jakab
-#
-#  Author: Adam Jakab <adam at jakab dot pro>
-#  Created: 3/21/20, 11:28 AM
+#  Copyright: Copyright (c) 2020., <AUTHOR>
+#  Author: <AUTHOR> <EMAIL>
 #  License: See LICENSE.txt
 
 from optparse import OptionParser
-from beets.library import Library, Item, parse_query_parts
+
+from beets.library import Library
 from beets.ui import Subcommand, decargs
 from beets.util.confit import Subview
 
 from beetsplug.template import common
-
-# The plugin
-__PLUGIN_NAME__ = u'template'
-__PLUGIN_SHORT_DESCRIPTION__ = u'a plugin template'
 
 
 class TemplateCommand(Subcommand):
@@ -25,7 +20,10 @@ class TemplateCommand(Subcommand):
     def __init__(self, cfg):
         self.config = cfg
 
-        self.parser = OptionParser(usage='beet template [options] [QUERY...]')
+        self.parser = OptionParser(
+            usage='beet {plg} [options] [QUERY...]'.format(
+                plg=common.plg_ns['__PLUGIN_NAME__']
+            ))
 
         self.parser.add_option(
             '-v', '--version',
@@ -33,11 +31,12 @@ class TemplateCommand(Subcommand):
             help=u'show plugin version'
         )
 
-        # Keep this at the end
         super(TemplateCommand, self).__init__(
             parser=self.parser,
-            name=__PLUGIN_NAME__,
-            help=__PLUGIN_SHORT_DESCRIPTION__
+            name=common.plg_ns['__PLUGIN_NAME__'],
+            aliases=[common.plg_ns['__PLUGIN_ALIAS__']] if
+            common.plg_ns['__PLUGIN_ALIAS__'] else [],
+            help=common.plg_ns['__PLUGIN_SHORT_DESCRIPTION__']
         )
 
     def func(self, lib: Library, options, arguments):
@@ -51,11 +50,15 @@ class TemplateCommand(Subcommand):
         self.handle_main_task()
 
     def handle_main_task(self):
-        self._say("Well done!")
+        self._say("Your journey starts here...")
 
     def show_version_information(self):
-        from beetsplug.template.version import __version__
-        self._say("Plot(beets-{}) plugin for Beets: v{}".format(__PLUGIN_NAME__, __version__))
+        self._say("{pt}({pn}) plugin for Beets: v{ver}".format(
+            pt=common.plg_ns['__PACKAGE_TITLE__'],
+            pn=common.plg_ns['__PACKAGE_NAME__'],
+            ver=common.plg_ns['__version__']
+        ), log_only=False)
 
-    def _say(self, msg, log_only=False):
-        common.say(msg, log_only)
+    @staticmethod
+    def _say(msg, log_only=True, is_error=False):
+        common.say(msg, log_only, is_error)

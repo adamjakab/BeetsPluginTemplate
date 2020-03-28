@@ -21,6 +21,9 @@ rm -rf .git
 git init
 ```
 
+### 4. change plugin folder name
+Change the name folder `template` under `beetsplug` to `PLUGIN_NAME`
+
 ### 4. setup.py
 Substitute all occurrences of `template` with `PLUGIN_NAME`
 
@@ -48,3 +51,8 @@ plugins:
     - PLUGIN_NAME
 ```
 
+
+### 10. Change copyright headers
+In all files, in the copyright header, change:
+- `<AUTHOR>` to your name
+- `<EMAIL>` to your e-mail address

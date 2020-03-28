@@ -1,7 +1,5 @@
-#  Copyright: Copyright (c) 2020., Adam Jakab
-#
-#  Author: Adam Jakab <adam at jakab dot pro>
-#  Created: 3/21/20, 11:27 AM
+#  Copyright: Copyright (c) 2020., <AUTHOR>
+#  Author: <AUTHOR> <EMAIL>
 #  License: See LICENSE.txt
 
 import os
