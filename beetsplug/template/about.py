@@ -18,5 +18,5 @@ __PACKAGE_DESCRIPTION__ = u'Plugin template for Beets',
 __PACKAGE_URL__ = u'https://github.com/adamjakab/BeetsPluginTemplate'
 
 __PLUGIN_NAME__ = u'template'
-__PLUGIN_ALIAS__ = None
+__PLUGIN_ALIAS__ = u'tpl'
 __PLUGIN_SHORT_DESCRIPTION__ = u'the music revolution starts here'

@@ -50,7 +50,7 @@ class TemplateCommand(Subcommand):
         self.handle_main_task()
 
     def handle_main_task(self):
-        self._say("Your journey starts here...")
+        self._say("Your journey starts here...", log_only=False)
 
     def show_version_information(self):
         self._say("{pt}({pn}) plugin for Beets: v{ver}".format(

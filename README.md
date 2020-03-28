@@ -1,9 +1,14 @@
+[![Build Status](https://travis-ci.org/adamjakab/BeetsPluginTemplate.svg?branch=master)](https://travis-ci.org/adamjakab/BeetsPluginTemplate)
+[![Coverage Status](https://coveralls.io/repos/github/adamjakab/BeetsPluginTemplate/badge.svg?branch=master)](https://coveralls.io/github/adamjakab/BeetsPluginTemplate?branch=master)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.txt)
+
+
 # Beets Plugin Template
 
 An empty template structure to speed up plugin development.
 
 
-# Usage:
+## Usage:
 
 ### 1. Decide the name for your plugin. 
 You will need this to name folders and values inside the code.
@@ -24,40 +29,46 @@ git init
 ### 4. change plugin folder name
 Change the name folder `template` under `beetsplug` to `PLUGIN_NAME`
 
-### 4. setup.py
+### 5. setup.py
 Substitute all occurrences of `template` with `PLUGIN_NAME`
 
-### 5. beetsplug/template/__init__.py
+### 6. beetsplug/template/__init__.py
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 - Change class name `TemplatePlugin` to `<PLUGIN_NAME>Plugin`
 - Change class name `TemplateCommand` to `<PLUGIN_NAME>Command`
 
-### 6. beetsplug/template/command.py
+### 7. beetsplug/template/command.py
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 - Change class name `TemplateCommand` to `<PLUGIN_NAME>Command`
 
-### 7. beetsplug/template/common.py
+### 8. beetsplug/template/common.py
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 
-### 8. Add the path of your plugin to your beets configuration
+### 9. Change copyright headers
+In all files, in the copyright header, change:
+- `<AUTHOR>` to your name
+- `<EMAIL>` to your e-mail address
+
+### 10. Add the path of your plugin to your beets configuration
 ```yaml
 pluginpath:
     - PLUGIN_DIR/beetsplug/
 ```
 
-### 9. Add your plugin to the list of enabled plugins
+### 11. Add your plugin to the list of enabled plugins
 ```yaml
 plugins:
     - PLUGIN_NAME
 ```
 
-
-### 10. Change copyright headers
-In all files, in the copyright header, change:
-- `<AUTHOR>` to your name
-- `<EMAIL>` to your e-mail address
-
-### 11. Tests
+### 12. Tests
 - Substitute all occurrences of `template` with `PLUGIN_NAME`
 - Change class name `TemplatePlugin` to `<PLUGIN_NAME>Plugin` in `test/helper.py`
+- Install nosetests: `ip install nose`
+- Run the tests with `nosetests` - all tests should pass and you should get 100% coverage. Keep it that way ;)
 
+### 13. Run the command
+Run the command with: `beet template`.
+
+
+## Now, it's your turn
